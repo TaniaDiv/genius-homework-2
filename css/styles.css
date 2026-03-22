@@ -4,21 +4,64 @@
   --color-white: #fff;
   --color-grey: #4a4a4a;
   --color-black: #000;
+  --color-background: linear-gradient(
+    38deg,
+    rgba(43, 127, 255, 0.2) 39.74%,
+    rgba(43, 127, 255, 0) 54.16%,
+    rgba(43, 127, 255, 0) 66.66%
+  );
 }
 
 /* Base */
+* {
+  box-sizing: border-box;
+}
+
 ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  padding-top: 37px;
+  padding-bottom: 40px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1488px;
+  margin: 0 auto;
 }
 
 body {
   color: var(--color-primary-dark);
+  background: var(--color-background);
   font-family: 'Roboto', sans-serif;
   font-size: 22px;
   font-weight: 400;
   line-height: 1.7;
+  margin: 0;
 }
 
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
 .address {
   font-style: normal;
 }
@@ -32,6 +75,8 @@ h3 {
 
 /* Button */
 .button {
+  font-family: inherit;
+  padding: 16px 32px;
   color: var(--color-white);
   font-weight: 600;
   background-color: var(--color-primary-light);
@@ -57,22 +102,51 @@ h3 {
   text-decoration: none;
 }
 
-.header-nav .link:hover {
+.link:hover {
   color: var(--color-primary-light);
-  font-family: Roboto;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  text-decoration: none;
 }
 
 .header-nav .link .accent {
   color: var(--color-primary-light);
   font-weight: 700;
+  display: inline-block;
+  align-items: center;
+}
+
+/* Header */
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  gap: 240px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  gap: 56px;
+}
+
+.header-menu {
+  display: flex;
+  gap: 64px;
 }
 
 /* Hero section */
+.hero-section {
+  padding: 125px 205px 14px 205px;
+  text-align: left;
+  background-image: url('../images/hero-section-background.webp');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .hero-title {
   color: var(--color-primary-light);
   text-align: left;
@@ -81,6 +155,7 @@ h3 {
   font-weight: 700;
   line-height: 0.81;
   font-style: normal;
+  margin-bottom: 40px;
 }
 
 .hero-tagline {
@@ -92,15 +167,21 @@ h3 {
 /* Advantages section */
 .advantages-list {
   background-color: var(--color-white);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .advantages-item {
-  font-family: Roboto;
+  color: var(--color-grey);
+  text-align: center;
+  font-family: Roboto sans-serif;
   font-size: 12px;
+  font-style: normal;
   font-weight: 400;
   line-height: 1.5;
   width: 238px;
-  text-align: center;
+  margin-top: 14px;
 }
 
 .advantages-subtitle {
@@ -116,10 +197,130 @@ h3 {
   font-style: normal;
   font-weight: 700;
   line-height: 1.1;
+  margin-bottom: 40px;
+  margin-top: 163px;
+}
+
+.section-title.centered {
+  text-align: center;
 }
 
 .section-title .accent {
   color: var(--color-primary-light);
+  font-weight: 700;
+}
+
+.section-title-wrapper {
+  position: relative;
+}
+
+.section-title-star::after {
+  content: '';
+  position: absolute;
+  top: 993px;
+  left: 958px;
+  background-image: url();
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: rotate(-30deg);
+  width: 64px;
+  height: 64px;
+}
+
+.aboutus-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  position: relative;
+}
+
+.aboutus-content {
+  max-width: 709px;
+}
+
+.aboutus-image {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 335px;
+}
+
+.aboutus img {
+  width: 100%;
+  height: 328px;
+  flex-shrink: 0;
+}
+
+.aboutus-tittle {
+  margin-bottom: 40px;
+  margin-top: 37px;
+}
+
+.section-subtitle {
+  margin-bottom: 40px;
+  margin-top: 40px;
+  font-size: 22px;
+  line-height: 1.7;
+  font-weight: 400;
+  color: var(--color-primary-dark);
+}
+
+.whyus-title {
+  max-width: 432px;
+  margin: 0 auto 48px;
+}
+
+.whyus-subtitle {
+  padding: 24px 32px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--color-black);
+  border-radius: 32px;
+  background-color: var(--color-white);
+}
+
+.whyus-section {
+  padding-top: 48px;
+  padding-bottom: 56px;
+}
+
+.whyus-list {
+  width: 100%;
+  display: flex;
+  gap: 56px;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.whyus-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-basis: calc((100% - 112px) / 3);
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.whyus-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 32px;
+  background-color: var(--color-white);
+  border-radius: 32px;
+  box-shadow: 0 4px 4px 0 rgba(168, 198, 245, 0.38);
+}
+
+.whyus-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 24px;
 }
 
 /* Section text */
@@ -131,6 +332,11 @@ h3 {
   color: var(--color-primary-dark);
   text-transform: capitalize;
   font-weight: 600;
+  margin-top: 40px;
+}
+
+.section-text.limited {
+  max-width: 709px;
 }
 
 /*  Заголовок Why Us  */
@@ -153,6 +359,30 @@ h3 {
   line-height: 1.2;
 }
 
+.procedures-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.procedures-item {
+  flex-basis: calc((100%-32px) / 3);
+}
+
+.procedure-card {
+  height: 456px;
+  border-radius: 120px 4px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(1, 28, 68, 0) 48.53%,
+    rgba(1, 28, 68, 0.73) 84.61%,
+    var(--color-primary-dark) 101.39%
+  );
+  padding: 16px;
+  padding-bottom: 32px;
+  text-align: center;
+}
+
 .form-section {
   background-color: var(--color-primary-dark);
 }
@@ -173,6 +403,10 @@ h3 {
 /* Footer */
 .footer {
   background-color: var(--color-primary-dark);
+  background-image: url('../images/footer-background.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   color: var(--color-white);
 }
 
