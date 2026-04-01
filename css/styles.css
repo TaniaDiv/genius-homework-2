@@ -13,7 +13,9 @@
 }
 
 /* Base */
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -66,6 +68,10 @@ p {
   font-style: normal;
 }
 
+a {
+  display: inline-block;
+}
+
 /* Headings */
 h1,
 h2,
@@ -95,7 +101,7 @@ h3 {
 /* Link */
 .header-nav .link {
   color: var(--color-primary-dark);
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-size: 18px;
   line-height: normal;
   font-weight: 400;
@@ -352,6 +358,8 @@ h3 {
 
 /* Procedurs title */
 .procedures-title {
+  color: var(--color-white);
+  text-align: center;
   font-family: Roboto;
   font-size: 22px;
   font-style: normal;
@@ -372,6 +380,11 @@ h3 {
 .procedure-card {
   height: 456px;
   border-radius: 120px 4px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   background-image: linear-gradient(
     180deg,
     rgba(1, 28, 68, 0) 48.53%,
@@ -381,6 +394,12 @@ h3 {
   padding: 16px;
   padding-bottom: 32px;
   text-align: center;
+}
+
+.procedures-container {
+  display: flex;
+  gap: 32px;
+  align-items: center;
 }
 
 .form-section {
@@ -400,8 +419,60 @@ h3 {
   color: var(--color-primary-light);
 }
 
+/* Carousel */
+.carousel-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: transparent;
+  border-radius: 50%;
+  border: 1px solid var(--color-primary-dark);
+  cursor: pointer;
+}
+
+.carousel-arrow {
+  color: var(--color-primary-dark);
+}
+
+.carousel-button:hover {
+  background: var(--color-primary-dark);
+}
+
+.carousel-button:hover .carousel-arrow {
+  fill: var(--color-white);
+  color: var(--color-white);
+}
+
+/* Contact section */
+
+.contact-section {
+  padding-bottom: 94px;
+}
+
+.contact-container {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.contact-title {
+  margin-bottom: 16px;
+}
+
+.contact-map {
+  flex-shrink: 0;
+  border-radius: 32px;
+  border: none;
+}
+
 /* Footer */
+
 .footer {
+  padding: 56px 0;
   background-color: var(--color-primary-dark);
   background-image: url('../images/footer-background.webp');
   background-repeat: no-repeat;
@@ -410,9 +481,20 @@ h3 {
   color: var(--color-white);
 }
 
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
 .footer-nav a {
+  flex-basis: 50%;
   background-color: var(--color-primary-dark);
   color: var(--color-white);
+  gap: 20px;
   font-family: Roboto;
   font-size: 16px;
   font-style: normal;
@@ -424,6 +506,25 @@ h3 {
 .footer-nav a:hover {
   color: var(--color-white);
   text-decoration: none;
+}
+
+.footer-logo {
+  display: block;
+}
+
+.footer-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-address {
+  display: flex;
+  flex-basis: 50%;
+}
+
+.address-list,
+.address-info {
+  flex-grow: 1;
 }
 
 .address-link {
@@ -442,4 +543,10 @@ h3 {
 .address-copyright {
   font-size: 13px;
   line-height: normal;
+}
+
+.adress-icon {
+  display: flex;
+  fill: var(--color-white);
+  color: var(--color-white);
 }
