@@ -37,6 +37,35 @@
                 <a class="link" href="#contacts-section">Контакти</a>
               </li>
             </ul>
+            <div class="header-social">
+              <a href="#">
+                <img
+                  class="address-icon"
+                  src="./images/telephone-dark.svg"
+                  alt="Телефон"
+                  width="42"
+                  height="42"
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="address-icon"
+                  src="./images/facebook-dark.svg"
+                  alt="Facebook"
+                  width="42"
+                  height="42"
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="address-icon"
+                  src="./images/instagram-dark.svg"
+                  alt="Instagram"
+                  width="42"
+                  height="42"
+                />
+              </a>
+            </div>
           </nav>
         </div>
       </div>
@@ -197,7 +226,53 @@
                   Запишіться <span class="accent">безкоштовно</span> та
                   отримайте подарунок
                 </h3>
-                <!--form-->
+                <form name="contact-form" autocomplete="off">
+                  <div class="form-field">
+                    <label class="form-label" for="user-name"
+                      >Ваше ім'я та прізвище</label
+                    >
+                    <input
+                      class="form-input"
+                      type="text"
+                      id="user-name"
+                      name="user-name"
+                      placeholder="Ім'я"
+                    />
+                  </div>
+                  <div class="form-field">
+                    <label class="form-label" for="user-tel"
+                      >Ваш номер телефону</label
+                    >
+                    <input
+                      class="form-input"
+                      type="tel"
+                      id="user-tel"
+                      name="user-tel"
+                      placeholder="Телефон"
+                    />
+                  </div>
+                  <div class="form-field">
+                    <label class="form-label" for="user-email"
+                      >Ваша електронна пошта</label
+                    >
+                    <input
+                      class="form-input"
+                      type="email"
+                      id="user-email"
+                      name="user-email"
+                      placeholder="Електронна пошта"
+                    />
+                  </div>
+                  <button class="form-button button" type="submit">
+                    Записатись безкоштовно
+                  </button>
+                  <p class="form-terms">
+                    Натискаючи на кнопку я погоджуюсь з
+                    <a class="form-terms-link" href="#"
+                      >політикою конфіденційності</a
+                    >
+                  </p>
+                </form>
               </section>
             </div>
             <iframe
@@ -232,62 +307,64 @@
             </ul>
           </nav>
           <address class="footer-address">
-            <ul class="address-list">
-              <li>
-                <a class="address-link" href="tel:+380960000007"
-                  >+ 38 (096) 000 00 07</a
-                >
-              </li>
-              <li>
-                <a class="address-link" href="mailto:beautyzone@gmail.com"
-                  >beautyzone@gmail.com</a
-                >
-              </li>
-              <li>
-                <a
-                  class="address-link"
-                  href="https://maps.app.goo.gl/4MFi4D2YwZnt4crA6"
-                  target="_blank"
-                >
-                  Україна, м. Київ, вул. Тараса Шевченка 5
-                </a>
-              </li>
-            </ul>
-            <ul class="address-social-list">
-              <li>
-                <a href="#">
-                  <img
-                    class="address-icon"
-                    src="./images/telephone.svg"
-                    alt="Телефон"
-                    width="42"
-                    height="42"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img
-                    class="address-icon"
-                    src="./images/facebook.svg"
-                    alt="Facebook"
-                    width="42"
-                    height="42"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img
-                    class="address-icon"
-                    src="./images/instagram.svg"
-                    alt="Instagram"
-                    width="42"
-                    height="42"
-                  />
-                </a>
-              </li>
-            </ul>
+            <div class="address-wrap">
+              <ul class="address-list">
+                <li>
+                  <a class="address-link" href="tel:+380960000007"
+                    >+ 38 (096) 000 00 07</a
+                  >
+                </li>
+                <li>
+                  <a class="address-link" href="mailto:beautyzone@gmail.com"
+                    >beautyzone@gmail.com</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="address-link"
+                    href="https://maps.app.goo.gl/4MFi4D2YwZnt4crA6"
+                    target="_blank"
+                  >
+                    Україна, м. Київ, вул. Тараса Шевченка 5
+                  </a>
+                </li>
+              </ul>
+              <ul class="address-social-list">
+                <li>
+                  <a href="#">
+                    <img
+                      class="address-icon"
+                      src="./images/telephone.svg"
+                      alt="Телефон"
+                      width="42"
+                      height="42"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img
+                      class="address-icon"
+                      src="./images/facebook.svg"
+                      alt="Facebook"
+                      width="42"
+                      height="42"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img
+                      class="address-icon"
+                      src="./images/instagram.svg"
+                      alt="Instagram"
+                      width="42"
+                      height="42"
+                    />
+                  </a>
+                </li>
+              </ul>
+            </div>
             <div class="address-info">
               <a class="address-link" href="#" target="_blank"
                 >Політика конфіденційності</a
@@ -300,8 +377,53 @@
     </footer>
 
     <div class="backdrop is-hidden">
-      <div class="modal">
+      <div class="modal-form">
         <button class="modal-btn-close" type="button">Close</button>
+        <h2>Замовити дзвінок</h2>
+        <p>Запишіться безкоштовно та отримайте подарунок</p>
+        <form name="modal" autocomplete="on" novalidate>
+          <div class="form-field">
+            <label class="form-label" for="user-name"
+              >Ваше ім'я та прізвище</label
+            >
+            <input
+              class="form-input"
+              type="text"
+              id="user-name"
+              name="user-name"
+              placeholder="Ім'я"
+            />
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="user-tel">Ваш номер телефону</label>
+            <input
+              class="form-input"
+              type="tel"
+              id="user-tel"
+              name="user-tel"
+              placeholder="Телефон"
+            />
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="user-email"
+              >Ваша електронна пошта</label
+            >
+            <input
+              class="form-input"
+              type="email"
+              id="user-email"
+              name="user-email"
+              placeholder="Електронна пошта"
+            />
+          </div>
+          <button class="form-button button" type="submit">
+            Записатись безкоштовно
+          </button>
+          <p class="form-terms">
+            Натискаючи на кнопку я погоджуюсь з
+            <a class="form-terms-link" href="#">політикою конфіденційності</a>
+          </p>
+        </form>
       </div>
     </div>
 
